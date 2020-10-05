@@ -1,0 +1,213 @@
+4.1 :
+import java.util.Scanner;
+
+public class main {
+	public static void main(String[] args) {
+	int nombre;
+	System.out.println("Entre un nombre");
+	Scanner sc = new Scanner(System.in);
+	nombre = sc.nextInt();
+	while (nombre >= 5 || nombre < 0)
+	{
+		System.out.println("Ce n'est pas un bon choix, réessaie");
+		nombre = sc.nextInt();
+	}
+	System.out.println("Voilà, c'est un bon choix !");
+} 
+}
+
+4.2
+import java.util.Scanner;
+
+public class main {
+	public static void main(String[] args) {
+	int nombreTest = 0;
+	double moyenne = 0, nbres = 0 , diviseur = 0;
+	System.out.println("Entre différents nombres, je calculerai leur moyenne, pour terminer, tape 100");
+	Scanner sc = new Scanner(System.in);
+	nombreTest = sc.nextInt();
+	while (nombreTest != 100)
+	{
+		nbres = nbres + nombreTest;
+		diviseur++;
+		nombreTest = sc.nextInt();
+	}
+	moyenne = nbres / diviseur;
+	System.out.println("Voici la moyenne : " + moyenne);
+} 
+}
+
+4.3
+import java.util.Scanner;
+
+public class main {
+	public static void main(String[] args) {
+	int nombres =0, max = 0, min = 0, cpt = 1, occMax = 0, occMin = 0, cptMax = 1, cptMin = 1;
+	System.out.println("Tape des nombres, je te dirai le plus grand et le plus petit. Pour terminer, tape 100");
+	Scanner sc = new Scanner(System.in);
+	nombres = sc.nextInt();
+	max = nombres;
+	min = nombres;
+	while (nombres != 100)
+	{
+		if (nombres < min)
+		{
+			min = nombres;
+			cptMin = cpt;
+			occMin = 1;
+		}
+		if (nombres > max)
+		{
+			max = nombres;
+			cptMax = cpt;
+			occMax = 1;
+		}
+		if (max == occMax);
+		{
+			occMax++;
+		}
+		if (min == occMin);
+		{
+			occMin++;
+		}
+		cpt++;
+		nombres = sc.nextInt();
+	}
+	System.out.println("Voici le plus grand : " + max + " Nombre d'apparitions : " + occMax); //occMax à vérifier
+	System.out.println("C'était en position " + cptMax);
+	System.out.println("Voici le plus petit : " + min + " Nombre d'apparitions : " + occMin); //occMin à vérifier
+	System.out.println("C'était en position " + cptMin);
+} 
+}
+
+4.4
+import java.util.Scanner;
+
+public class main {
+	public static void main(String[] args) {
+	int nombres = 0, curNbre = 0, max = 0, min = 1, tete = 0, pied = 1;
+	System.out.println("Entre des nombres, je te dirai la taille de la plus grande chaine croissante et décroissante. Pour terminer, tape 100");
+	Scanner sc = new Scanner(System.in);
+	curNbre = sc.nextInt();
+	while (curNbre != 100)
+	{
+		if (curNbre > nombres)
+			max++;
+		else
+			max = 1;
+		if (max >= tete)
+			tete = max;
+		if (curNbre < nombres)
+			min++;
+		else
+			min = 1;
+		if (min >= pied)
+			pied = min;
+		nombres = curNbre;
+		curNbre = sc.nextInt();
+	}
+	System.out.println("Voici la taille de la plus grande chaine croissante : " + tete);
+	System.out.println("Voici la taille de la plus grande chaine décroissante : " + pied);
+} 
+}
+
+import java.util.Scanner;
+
+public class main {
+	public static void main(String[] args) {
+	int nombre = 0, fact = 1;
+	System.out.println("Entre un entire positif, je te dirai sa factiorielle");
+	Scanner sc = new Scanner(System.in);
+	nombre = sc.nextInt();
+	while ((nombre % 1) != 0 || (nombre <= 0))
+	{
+		System.out.println("Je veux un entier positif ! (de 1 à ...)");
+		nombre = sc.nextInt();
+	}
+	fact = nombre;
+	System.out.println("Voici sa factorielle");
+	while (nombre != 2)
+	{
+		fact = fact * (nombre - 1);
+		nombre = nombre - 1;
+	}
+	System.out.println(fact); // marche pas avec des trop gros nombres
+} 
+}
+
+5.1
+import java.util.Scanner;
+
+public class main {
+	public static void main(String[] args) {
+	int nombre = 0, cptMoyenne = 0;
+	double moyenne = 0, curNbre = 0;
+	Scanner sc = new Scanner(System.in);
+	for (int cpt = 1; cpt < 30; cpt++)
+	{
+		nombre = sc.nextInt();
+		if ((nombre >= 10) && (nombre <= 20))
+		{
+			curNbre = nombre + curNbre;
+			cptMoyenne ++;
+		}
+	}
+	if (cptMoyenne == 0)
+		System.out.println("Moyenne impossible car aucun valeur à calculer");
+	else
+	{
+		moyenne = curNbre / cptMoyenne;
+		System.out.println("Voici la moyenne des nombres entre 10 et 20 : " + moyenne);
+	}
+} 
+}
+
+5.2
+import java.util.Scanner;
+
+public class main {
+	public static void main(String[] args) {
+	int tete = 0, pied = 0, somme = 0;
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Entre 2 nombres, je te donnerai la somme des nombres compris entre ces 2 nombres");
+	System.out.println("Nombre de départ ?");
+	pied = sc.nextInt();
+	System.out.println(" Nombre de fin ?");
+	tete = sc.nextInt();
+	while (tete <= pied)
+	{
+		System.out.println("Non, il me faut un nombre strictement plus grand que le nombre de départ");
+		System.out.println("Nombre de départ ?");
+		pied = sc.nextInt();
+		System.out.println(" Nombre de fin ?");
+		tete = sc.nextInt();
+	}
+	for (int cpt = pied + 1; cpt < tete; cpt++)
+		somme = somme + cpt;
+	System.out.println("Voila l'addition des nombres : " + somme);
+} 
+}
+
+import java.util.Scanner;
+
+public class main {
+	public static void main(String[] args) {
+ float nombre = (float)Math.random();
+ nombre = nombre * 100;
+ int intNbre = (int)nombre;
+ intNbre++;
+ int choix;
+ System.out.println("J'ai choisi un nombre entre 1 et 100, trouve-le !");
+ Scanner sc = new Scanner(System.in);
+ choix = sc.nextInt();
+ while (intNbre != choix)
+ {
+	 if (choix < intNbre)
+		 System.out.println("C'est plus grand");
+	 else
+		 System.out.println("C'est plus petit");
+	 choix = sc.nextInt();
+ }
+ System.out.println("Gagné !!!");
+} 
+}
