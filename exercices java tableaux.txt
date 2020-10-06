@@ -1,0 +1,104 @@
+7.2
+import java.util.Scanner;
+
+public class main {
+	public static void main(String[] args) {
+int cases = 0, chiffres = 0, max = 0, min = 0;
+Scanner sc = new Scanner(System.in);
+System.out.println("Combien de nombres veux-tu rentrer dans le tableau ?");
+cases = sc.nextInt();
+int tab[] = new int[cases];
+System.out.println("Entre tes nombres");
+for (int cpt = 0; cpt < cases; cpt++)
+{
+	chiffres = sc.nextInt();
+	if (cpt == 1)
+	{
+		min = chiffres;
+		max = chiffres;
+	}
+	tab[cpt] = chiffres ;
+	if (chiffres > max)
+		max = chiffres;
+	if (chiffres < min)
+		min = chiffres;
+}
+System.out.println("Voici le nombre max du tableau : " + max);
+System.out.println("Voici le nombre min du tableau : " + min);
+} 
+}
+
+7.3
+import java.util.Scanner;
+
+public class main {
+	public static void main(String[] args) {
+	int cases = 0, tab[] = new int [16];
+	tab[cases] = 1;
+	System.out.println(tab[cases]);
+	cases++;
+	while (cases < 16)
+	{
+		tab[cases] = 2* tab[cases-1];
+		System.out.println(tab[cases]);
+		cases++;
+	}
+} 
+}
+
+7.4
+import java.util.Scanner;
+
+public class main {
+	public static void main(String[] args) {
+	int cases = 0, cases2 = 9; int tab[] = new int [10], tab2[] = new int [10];
+	Scanner sc = new Scanner(System.in);
+	System.out.println(" Entre 10 nombres, j'intervertirai leur ordre");
+	for (int cpt = 0; cpt < 10; cpt++)
+	{
+		tab[cpt] = sc.nextInt();
+		tab2[cases2] = tab[cpt];
+		cases2--;
+	}
+	for (int cpt = 0; cpt < 10; cpt++)
+	{
+		System.out.println(tab2[cpt]);
+	}
+	
+} 
+}
+
+7.5 // marche pas, à refaire ave boucle while et revenir au début dès qu'il trouve un ' '
+import java.util.Scanner;
+
+public class main {
+	public static void main(String[] args) {
+	int cases = 0, espaces = 0;
+	boolean test = false;
+	char tab[] = {'s','u','p','p','r','i','m','e','r',' ',' ','l','e','s',' ','e','s','p','a','c','e','s',' '};
+	while (test == false)
+	{
+		espaces = 0;
+		for (int cpt2 = 0; cpt2 < 23; cpt2++)
+		{
+			if (tab[cpt2] == ' ')
+				espaces++;
+		}
+		if (espaces == 0)
+			test = true;
+		for (int cpt = 0; cpt < 23; cpt++)
+		{
+			if (tab[cpt] == ' ')
+			{
+				for (int cpt2 = 0; cpt2 < 22; cpt2++)
+				{tab[cpt2] = tab[cpt2 + 1];}
+			}
+		}
+	}
+	for (int cpt3 = 0; cpt3 < 23; cpt3++)
+	{
+		System.out.println(tab[cpt3]);
+	}
+	
+} 
+} // marche pas, à refaire
